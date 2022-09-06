@@ -141,6 +141,8 @@
 
             background-color: white;
             box-shadow: 1px 1px 5px rgb(169, 168, 168);
+
+            z-index: 999;
         }
 
         /* .elem:before{
@@ -169,6 +171,9 @@
             top: 0%;
         }
 
+        .rows a{
+            color: black;
+        }
         @media (max-width:400px){
             h1{
                 font-size: 40px;
@@ -189,16 +194,16 @@
             <input type="text" placeholder="Поиск">
         </div>
     </header>
-    <main class="margin">
+    <main class="margin" id="main">
         <div class="container">
             <div class="books_Table margin">
 
             </div>
             <div class="rows">
                 <span>
-                    <ion-icon class="prev" name="arrow-back-outline"></ion-icon>
+                    <a href="#main"><ion-icon class="prev" name="arrow-back-outline"></ion-icon></a>
                 </span><span>
-                    <ion-icon class="next" name="arrow-forward-outline"></ion-icon>
+                    <a href="#main"><ion-icon class="next" name="arrow-forward-outline"></ion-icon></a> 
                 </span>
             </div>
         </div>
@@ -291,10 +296,10 @@
                 }
 
                 if (discription) {
-                    if (discription.length < 220) {
+                    if (discription.length < 200) {
                         clone.querySelector('.discription').textContent += discription;
                     } else {
-                        clone.querySelector('.discription').textContent += discription.slice(0, 220) + '...';
+                        clone.querySelector('.discription').textContent += discription.slice(0, 200) + '...';
                     }
                 } else {
                     clone.querySelector('.discription').textContent += 'Отсуствует';
